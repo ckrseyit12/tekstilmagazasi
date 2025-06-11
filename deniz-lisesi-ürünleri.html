@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doğrudur Tekstil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<nav>
+
+  
+  <a href="index.html"  class="logo"><img src="images/logo yeni.png" width="90" height="90">DOĞRUDUR TEKSTİL</a>
+  
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Ürün ara..." />
+    <button onclick="searchProducts()"><i class="ri-search-line"></i></button>
+  </div>
+
+  <div class="nav-right">
+    <a href="cart.html" id="cart-icon">
+      <i class="ri-shopping-bag-line"></i>
+      <span class="cart-item-count">0</span>
+    </a>
+    <a href="favorites.html" id="favorite-icon">
+      <i class="ri-heart-line"></i>
+      <span class="favorite-item-count">0</span>
+    </a>
+  </div>
+
+  <ul class="primary-menu">
+    <li>
+      <a href="#">Askeri Ürünler▼</a>
+      <ul class="dropdown">
+        <li><a href="askeri-malzeme.html">Askeri Malzeme</a></li>
+        <li><a href="askeri-ürünler.html">Askeri Ürünler</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Güvenlik Ürünleri▼</a>
+      <ul class="dropdown">
+        <li><a href="güvenlik-malzemeri.html">Güvenlik Malzemeleri</a></li>
+        <li><a href="güvenlik-kıyafetleri.html">Güvenlik Kıyafetleri</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Hediyelik Ürünler▼</a>
+      <ul class="dropdown">
+        <li><a href="anahtarlıklar.html">Anahtarlıklar</a></li>
+        <li><a href="peçler.html">Peçler</a></li>
+        <li><a href="kalemler.html">Kalemler</a></li>
+        <li><a href="rozetler.html">Rozetler</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Giyim Ve Tekstil▼</a>
+      <ul class="dropdown">
+        <li><a href="polarlar-ve-montlar.html">Polarlar Ve Montlar</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">İzci Ürünleri▼</a>
+      <ul class="dropdown">
+        <li><a href="izci-kıyafetleri.html">İzci Kıyafetleri</a></li>
+        <li><a href="izci-malzemeleri.html">İzci Malzemeleri</a></li>
+      </ul>
+    </li>
+    <li><a href="deniz-lisesi-ürünleri.html">Deniz Lisesi Ürünleri</a></li>
+    <li><a href="#">Hakkımızda</a></li>
+    <li><a href="#">İletişim</a></li>
+  </ul>
+</nav>
+
+<section class="product-collection">
+  <div class="product-list"></div>
+</section>
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

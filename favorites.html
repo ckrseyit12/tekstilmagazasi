@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorilerim - Doğrudur Tekstil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">DOĞRUDUR TEKSTİL</a>
+    <div class="nav-right">
+      <a href="favorites.html" id="favorite-icon">
+        <i class="ri-heart-line"></i>
+        <span class="favorite-item-count">0</span>
+      </a>
+      <a href="cart.html" id="cart-icon">
+        <i class="ri-shopping-bag-line"></i>
+        <span class="cart-item-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="cart">
+    <h3>Favori Ürünlerim</h3>
+    <div class="cart-items favorite-list">
+      <!-- JavaScript ile doldurulacak -->
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.querySelector(".favorite-list");
+      const favorites = JSON.parse(sessionStorage.getItem("favorites")) || [];
+
+      container.innerHTML = "";
+
+      if (favorites.length === 0) {
+        container.innerHTML = "<p>Henüz favori ürününüz yok.</p>";
+        return;
+      }
+
+      favorites.forEach(product => {
+        const item = document.createElement("div");
+        item.classList.add("cart-item");
+        const mainImg = product.colors[0]?.mainImage || "images/no-image.png";
+
+        item.innerHTML = `
+          <div class="product">
+            <img src="${mainImg}" alt="${product.title}">
+            <div class="item-detail">
+              <p>${product.title}</p>
+            </div>
+          </div>
+          <span class="price">${product.price}</span>
+          <button class="remove-fav" data-id="${product.id}"><i class="ri-close-line"></i></button>
+        `;
+
+        container.appendChild(item);
+      });
+
+      document.querySelectorAll(".remove-fav").forEach(button => {
+        button.addEventListener("click", function () {
+          const id = this.getAttribute("data-id");
+          let fav = JSON.parse(sessionStorage.getItem("favorites")) || [];
+          fav = fav.filter(p => p.id != id);
+          sessionStorage.setItem("favorites", JSON.stringify(fav));
+          location.reload();
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
