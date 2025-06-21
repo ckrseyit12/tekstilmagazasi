@@ -537,12 +537,7 @@ nav a {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  nav {
-    padding: 15px 5%;
-    flex-direction: column;
-    align-items: center;
-  }
+
 
   .primary-menu {
     flex-direction: column;
@@ -571,37 +566,6 @@ nav a {
     width: 100%;
     padding: 0 5%;
   }
-}
-
-
-@media (max-width: 480px) {
-  .product-list {
-    grid-template-columns: 1fr;
-  }
-
-  .search-container input[type="text"] {
-    width: 200px;
-  }
-
-  .nav-right {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .product-card {
-    width: 100%;
-  }
-
-  .img-box {
-    height: 180px;
-  }
-
-  .cart-item img {
-    width: 100%;
-    height: auto;
-  }
-}
 
 
 
